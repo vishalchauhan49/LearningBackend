@@ -19,17 +19,13 @@ Most of the information is present inside my '.js file'
 |-----|----------|--------------|-------|
 |01.  |JWT BASICS| Sign,verify,expiry|✅ done
 |02.  | JWT middleware   |   Protect route with JWT           |   🔄in progreess    |
-|03.  |          |              |       |
+|03.  | JWT BUG SOLVING         |   ------           |    🔄I PROGRESS   |
 |04.  |          |              |       |
 
 ## Today's Goal  
-**Day 02 -Auth middleware**  
+**Day 03 -AuthMiddleware(BUG SOLVING)**  
 
-- Understanding how middleware works in Express  
-- Protect route using jwt middleware  
-- To learn error handling using middleware
-
-
+- Solving tomorrow's middleware BUG ,Stated in Day's README.md file.
 
  
 
@@ -37,10 +33,18 @@ Most of the information is present inside my '.js file'
 
 
 ## What I've learned so far
-**Day 01 — JWT:**
+**Day 01 — JWT:**  
+
 A token has 3 parts — header, payload, signature.
 `jwt.sign()` creates a token. `jwt.verify()` checks it.
-Always set `expiresIn` or the token never expires.
+Always set `expiresIn` or the token never expires.  
+
+**Day 02 -JWT:**   
+- I learned about middleware concepts.
+ - **Middleware's properties.i.e  
+ middleware has access to req, res and next() ,etc** 
+
+
 
 
 
