@@ -1,4 +1,4 @@
-# Day 03 - JWT AUTHMIDDLEWARE (Bug solving)
+# Day 04 - JWT AUTHMIDDLEWARE (Bug solving)
 
 **Date:** 17-june-2026  
 **Topic:** problem solving
