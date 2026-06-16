@@ -19,7 +19,7 @@ Most of the information is present inside my '.js file'
 |-----|----------|--------------|-------|
 |01.  |JWT BASICS| Sign,verify,expiry|✅ done
 |02.  | JWT middleware   |   Protect route with JWT           |   🔄in progreess    |
-|03.  | JWT BUG SOLVING         |   ------           |    🔄I PROGRESS   |
+|03.  | JWT BUG SOLVING         |   ------           |    🔄In PROGRESS   |
 |04.  |          |              |       |
 
 ## Today's Goal  
