@@ -18,14 +18,16 @@ Most of the information is present inside my '.js file'
 | Day |   TOPICS | WHAT I LEARNED |STATUS |
 |-----|----------|--------------|-------|
 |01.  |JWT BASICS| Sign,verify,expiry|✅ done
-|02.  | JWT middleware   |   Protect route with JWT           |   🔄in progreess    |
-|03.  | JWT BUG SOLVING         |   ------           |    🔄In PROGRESS   |
-|04.  | Bug Solving        |  ------            |       |
+|02.  | JWT middleware   |   Protect route with JWT           |   ✅     |
+|03.  | JWT BUG SOLVING         |   Was just fixing         |    ✅   |
+|04.  | Bug Solving        | ERROR HANDLING            |🎯Error Solved      |
+|05  | Auth Deep Dive     |        |        |
+|06  |      |        |        |
 
 ## Today's Goal  
-**Day 04 -BUG SOLVING**  
+**Day 05 -Auth Deep Dive**  
 
-- Came with a solution to solve a bug.
+- 
 
 
  
@@ -43,8 +45,11 @@ Always set `expiresIn` or the token never expires.
 **Day 02 -JWT:**   
 - I learned about middleware concepts.
  - **Middleware's properties.i.e  
- middleware has access to req, res and next() ,etc** 
+ middleware has access to req, res and next() ,etc**  
 
+ **Day 03 & 04 JWT:**  
+ Learned "ERROR HANDLING".  
+ 
 
 
 
@@ -53,7 +58,7 @@ Always set `expiresIn` or the token never expires.
 
 ## Yet to Master  
 
-- Error  handling
+- ![Alt Text](https://img.shields.io/badge/ErrorHandling-✅50%-blue)
 
 
 

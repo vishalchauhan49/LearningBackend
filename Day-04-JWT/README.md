@@ -11,7 +11,7 @@
 ---
 ## 🎯 what i planned to Do
 - I will be solving tomorrows problem as stated.
-> `How i will do that its written in my Day-04-problemsolving(resumed).js file`
+> `How i will do that its written in my 04-Bug_Solved.js file`
 -   
 
 
@@ -39,8 +39,13 @@
 
 
 ## What i actually learned  
- - 
- - 
+  **Learned "ERROR HANDLING"**  
+  
+  - Really my bug got solved just by error handling , I gave 2 days 😅.
+  - Suddenly error handling came into my mind and see it solved my whole problem.
+  - Infact i wrote a logic to solve it ,do feel free to add into it.
+  
+ 
 
 
 
