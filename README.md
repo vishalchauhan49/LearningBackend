@@ -20,12 +20,13 @@ Most of the information is present inside my '.js file'
 |01.  |JWT BASICS| Sign,verify,expiry|✅ done
 |02.  | JWT middleware   |   Protect route with JWT           |   🔄in progreess    |
 |03.  | JWT BUG SOLVING         |   ------           |    🔄In PROGRESS   |
-|04.  |          |              |       |
+|04.  | Bug Solving        |  ------            |       |
 
 ## Today's Goal  
-**Day 03 -AuthMiddleware(BUG SOLVING)**  
+**Day 04 -BUG SOLVING**  
 
-- Solving tomorrow's middleware BUG ,Stated in Day's README.md file.
+- Came with a solution to solve a bug.
+
 
  
 
