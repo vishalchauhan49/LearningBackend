@@ -21,11 +21,11 @@ Most of the information is present inside my '.js file'
 |02.  | JWT middleware   |   Protect route with JWT           |   ✅     |
 |03.  | JWT BUG SOLVING         |   Was just fixing         |    ✅   |
 |04.  | Bug Solving        | ERROR HANDLING            |🎯Error Solved      |
-|05  | Auth Deep Dive     |        |        |
-|06  |      |        |        |
+|05  | Mastering Error Handling     |  try catch , try catch in middleware, route level error handling      |  ✅      |
+|06  |  COMING SOON    |  ---      |    --    |
 
 ## Today's Goal  
-**Day 05 -Auth Deep Dive**  
+**Day 06: YET NOT STARTED**  
 
 - 
 
@@ -48,7 +48,12 @@ Always set `expiresIn` or the token never expires.
  middleware has access to req, res and next() ,etc**  
 
  **Day 03 & 04 JWT:**  
- Learned "ERROR HANDLING".  
+ Learned "ERROR HANDLING".   
+
+ **Day 05:**  
+ Learned about error handling.  
+ > - Route based error handling in Express.   
+ >- Try catch inside route using next(err).
  
 
 
@@ -58,7 +63,9 @@ Always set `expiresIn` or the token never expires.
 
 ## Yet to Master  
 
-- ![Alt Text](https://img.shields.io/badge/ErrorHandling-✅50%-blue)
+- ![Alt Text](https://img.shields.io/badge/ErrorHandling-red): mastered ✅.  
+- 
+
 
 
 
