@@ -2,16 +2,17 @@
 
 >  Building backend Skills from scratch , one day at a time ,Notes live are inside the code as comments.
 
-![Alt Text](https://img.shields.io/badge/nodejs-blue)
-![alt text](https://img.shields.io/badge/Express-blue)
-![alt text](https://img.shields.io/badge/In%20progress-green)
-![alt text](https://img.shields.io/badge/started%20june%202026-grey)
+![nodejs ](https://img.shields.io/badge/nodejs-blue)
+![express](https://img.shields.io/badge/Express-blue)
+![Inprogress](https://img.shields.io/badge/In%20progress-green)
+![started june 2026](https://img.shields.io/badge/started%20june%202026-grey)
 
 
 # About this repo
 I will be sharing my backend learning journey here. 
-Each folder of my repo shows a day and topics covered inside it .
-Most of the information is present inside my '.js file'
+Each folder of my repo shows a day and topics covered inside it .  
+
+Detailed information is present inside my '.js file' and README.md files of each day.
 
 ## Learning log
 
@@ -22,10 +23,10 @@ Most of the information is present inside my '.js file'
 |03.  | JWT BUG SOLVING         |   Was just fixing         |    ✅   |
 |04.  | Bug Solving        | ERROR HANDLING            |🎯Error Solved      |
 |05  | Mastering Error Handling     |  try catch , try catch in middleware, route level error handling      |  ✅      |
-|06  |  COMING SOON    |  ---      |    --    |
+|06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |
 
 ## Today's Goal  
-**Day 06: YET NOT STARTED**  
+**Day 07: YET NOT STARTED**  
 
 - 
 
@@ -53,7 +54,15 @@ Always set `expiresIn` or the token never expires.
  **Day 05:**  
  Learned about error handling.  
  > - Route based error handling in Express.   
- >- Try catch inside route using next(err).
+ >- Try catch inside route using next(err).  
+
+**Day 06:**   
+- Security of a jwt.  
+- connecting a frontend to backend using same server and different server (cors concept);  
+-  localstorage and its functions.  
+- Deep dived into Devtools of a browser.   
+
+**Day 07:**
  
 
 

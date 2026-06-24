@@ -1,0 +1,126 @@
+<!--     
+     
+📌 Used axios library to fetch data 
+📌 In SIGNUP(): We simply " POST " username and password ;
+📌 In SIGNIN(): Signed a jwt token to a user using jwt secret_code  and returned token as response and from response sent by a server we saved our token in local storage of browser .
+
+
+📌details button : We are just printing details of a user by sending a get request of "/me" endpoint.
+
+📌 Logout button: Deleting token from localstorage simply.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.18.0/dist/axios.min.js"></script>
+</head>
+<script>
+
+async function signUp(){
+    const username=document.getElementById("signup-username").value;
+        const password=document.getElementById("signup-password").value;
+
+
+          await axios.post("http://localhost:3000/signup",{
+    username:username,
+    password:password
+
+   
+    
+
+});
+
+alert("y are signed up");
+}
+
+async function signIn(){
+
+
+const username=document.getElementById("signin-username").value;
+const password=document.getElementById("signin-password").value;
+
+     const response= await axios.post("http://localhost:3000/signin",{
+
+
+       username:username,
+       password:password
+
+
+      });
+
+      localStorage.setItem("authorization",response.data.token);
+      alert("u are signin");
+
+
+}
+
+
+async function getdetails(){
+
+    
+     const response=await axios.get("http://localhost:3000/me",{
+
+        headers:{
+            authorization:localStorage.getItem("authorization")
+            
+        }
+      
+
+
+     });
+
+     
+
+const showuser=document.getElementById("show").innerHTML=response.data.details;
+
+
+}
+
+
+ async function logout(){
+
+     const user_to_be_deleted=localStorage.getItem("authorization");
+     const delete_user=localStorage.clear(user_to_be_deleted);  
+
+}
+
+
+
+</script>
+<body>
+    
+<h1>SIMPLE AUTH DEMONSTRATION</h1>
+Signup
+<input type="text" placeholder="username" id="signup-username">
+<input type="password" placeholder="password" id="signup-password">
+<button onclick="signUp()">submit</button>
+<br>
+
+Signin
+<input type="text" placeholder="username" id="signin-username">
+<input type="password" placeholder="password" id="signin-password">
+<button onclick="signIn()">submit</button>
+
+<br>
+
+<h2 id="show">USER DETAILS </h2>
+<button onclick="getdetails()">details</button>
+<br>
+<button onclick="logout()">logout</button>
+
+
+
+
+
+
+
+
+
+</body>
+ 
+</html>
