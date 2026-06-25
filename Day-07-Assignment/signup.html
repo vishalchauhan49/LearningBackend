@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.18.0/dist/axios.min.js"></script>
+
+<style>
+
+*{margin: 2%;padding: 3%;}
+
+
+</style>
+
+
+</head>
+
+
+
+
+<script>
+
+    async function signUp(){
+    const username=document.getElementById("signup-username").value;
+        const password=document.getElementById("signup-password").value;
+
+
+          await axios.post("http://localhost:3000/signup",{
+    username:username,
+    password:password
+
+   // we don't want any response form server thats why not using any variable to store response from server   
+
+    
+
+});
+
+alert("y are signed up");
+}
+
+
+
+
+   
+</script>
+
+
+
+
+
+
+
+<body>
+<h1>Please Signup</h1>
+
+ <input type="username" placeholder="username" id="signup-username">
+ <input type="password" placeholder="password" id="signup-password">
+ <br>
+ <!-- <a href="http://localhost:3000/signin"> -->
+ <button  onclick="signUp()">Signup</button>
+ </a>
+
+
+   
+
+
+</body>
+</html>

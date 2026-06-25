@@ -27,7 +27,10 @@ FRONTEND IMAGE :
 
 
 ## What i actually learned  
-- 
+- static files and dynamic files .  
+>USED: express.static(path.join(__dirname,"style.css"))    
+
+
   
 
 - **Confusion resolved:**   

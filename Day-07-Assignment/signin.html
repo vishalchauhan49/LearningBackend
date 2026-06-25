@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.18.0/dist/axios.min.js"></script>
+
+<style>
+
+*{margin: 2%;padding: 3%;}
+
+
+</style>
+
+
+</head>
+
+
+
+
+<script>
+
+    
+app.get("/signin", (req, res) => {
+
+    const signinpath=path.join(__dirname,"signin.html");
+    res.sendFile(signinpath);
+            const username = req.body.username;
+            const password = req.body.password;
+
+  // before signing the user we are checking whether a valid pair of username and password exists or not in data .
+  // Here i am not using error handling concepts because i have not yet masterd it.
+
+  const found = users.find(
+         (u) => u.username === username && u.password === password);
+
+          if (!found)
+
+          return res.status(401).json({ message: "Please SignUp first" });
+
+          const token = jwt.sign({ username: found.username }, JWT_SECRET);         // assigning a jwt token 
+          
+           
+       //   console.log(users);                           
+          res.json({ token: token });
+       // console.log(token);
+});
+
+
+
+   
+</script>
+
+
+
+
+
+
+
+<body>
+<h1>Please Signup</h1>
+
+ <input type="username" placeholder="username" id="signin-username">
+ <input type="password" placeholder="password" id="signin-password">
+ <br>
+ 
+ <button  onclick="signIn()">Signup</button>
+ 
+
+
+   
+
+
+</body>
+</html>
