@@ -23,12 +23,13 @@ Detailed information is present inside my '.js file' and README.md files of each
 |03.  | JWT BUG SOLVING         |   Was just fixing         |    ✅   |
 |04.  | Bug Solving        | ERROR HANDLING            |🎯Error Solved      |
 |05  | Mastering Error Handling     |  try catch , try catch in middleware, route level error handling      |  ✅      |
-|06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |
+|06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |   
+|07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
 
 ## Today's Goal  
 **Day 07: YET NOT STARTED**  
 
-- 
+- Today i will be doing some changes in my frontend of Day 06 web page.
 
 
  
