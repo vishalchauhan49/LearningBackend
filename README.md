@@ -27,9 +27,9 @@ Detailed information is present inside my '.js file' and README.md files of each
 |07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
 
 ## Today's Goal  
-**Day 07: YET NOT STARTED**  
+**Day 08: YET NOT STARTED**  
 
-- Today i will be doing some changes in my frontend of Day 06 web page.
+- i Will be approaching further backend topics along with the solution of assignment.
 
 
  
@@ -63,7 +63,8 @@ Always set `expiresIn` or the token never expires.
 -  localstorage and its functions.  
 - Deep dived into Devtools of a browser.   
 
-**Day 07:**
+**Day 07:**   
+- solving assignment
  
 
 
