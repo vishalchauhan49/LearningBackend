@@ -32,10 +32,8 @@ FRONTEND IMAGE :
 
 
 ## What i actually learned  
-- Deep dived into `Localstorage functions and its uses `    
-- used AXIOS library to fetch data. 
-- Deep dived into devtools  
-- Worked on How frontend is served fron backend server itself to avoid cord error  " for now " , eventually we will be using different servers.
+- i learned about data bases and types of data's i.e noSql AND sql .   
+- 
   
 
 - **Confusion resolved:**   
