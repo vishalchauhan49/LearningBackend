@@ -8,37 +8,27 @@
 
 
 ---
-`NOTE : WE havent used css for styling (just a auth jwt demonstration)`
 
 
 
 
 ## 🎯 what i planned to learn
-- I planed to make a simple Auth webpage in which user can    
-  > Signup   
-  >Signin  
-  > Get his details   
-  >Logout  
-  
-<BR>
-
-FRONTEND IMAGE :  
- ![frontend image](../assets/frontend_demo.png )
+- I planned to learn about databases and their uses. My sql and Sql databases .  
 
 
 ## Confusions/doubts came while learning  
-- DOUBT CAME THAT: anyone can decode my jwt token using jwt.io 
+- none
 
 
 
 ## What i actually learned  
 - i learned about data bases and types of data's i.e noSql AND sql .   
-- 
+- Only theoriticall concepts are completed not coding part because i used only MongoDb compass 
+
   
 
 - **Confusion resolved:**   
-  Done a live demonstration :- `jwt token can be decoded by anyone using jwt.io but cannot be accessed because of signature `
-
+  none
 
 ## Questions I still  have
 - none   

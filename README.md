@@ -25,7 +25,7 @@ Detailed information is present inside my '.js file' and README.md files of each
 |05  | Mastering Error Handling     |  try catch , try catch in middleware, route level error handling      |  ✅      |
 |06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |   
 |07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
-|08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| -| 
+|08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| ✅| 
 
 
 
@@ -67,13 +67,14 @@ Always set `expiresIn` or the token never expires.
 - Deep dived into Devtools of a browser.   
 
 **Day 07:**   
-- solving assignment
+- solving assignment 
+
+**Day 08**   
+- Learned about databases .   
+- Specially NoSqL database (MongoDb);  
+- MongoDb use cases and its properties like its schema less characterstics.   
+    
  
-
-
-
-
-
 
 ## Yet to Master  
 
