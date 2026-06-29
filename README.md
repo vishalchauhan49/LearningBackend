@@ -25,12 +25,15 @@ Detailed information is present inside my '.js file' and README.md files of each
 |05  | Mastering Error Handling     |  try catch , try catch in middleware, route level error handling      |  ✅      |
 |06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |   
 |07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
+|08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| -| 
+
+
+
 
 ## Today's Goal  
-**Day 08: YET NOT STARTED**  
+**Day 08: Started NoSql Database (MongoDB)**  
 
-- i Will be approaching further backend topics along with the solution of assignment.
-
+- Setting up environment for mongoDb .And learning the CRUD operation by " GUI " i.e mongodb compass
 
  
 
