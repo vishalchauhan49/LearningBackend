@@ -26,14 +26,18 @@ Detailed information is present inside my '.js file' and README.md files of each
 |06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |   
 |07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
 |08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| ✅| 
+|09|Deep dive MongoDb|basically i was solving assignment| 🔄 In progress        |     
+|10|Assignment solving|EJS TEMPLATING | 🔄|   
+|11|Assignment solving and MongoDb deep dive|-|-|   
+
 
 
 
 
 ## Today's Goal  
-**Day 08: Started NoSql Database (MongoDB)**  
+**Day 11: Assignment solving & MongoDb deep dive**  
 
-- Setting up environment for mongoDb .And learning the CRUD operation by " GUI " i.e mongodb compass
+- 
 
  
 
@@ -73,13 +77,21 @@ Always set `expiresIn` or the token never expires.
 - Learned about databases .   
 - Specially NoSqL database (MongoDb);  
 - MongoDb use cases and its properties like its schema less characterstics.   
+
+**Day 09 & 10**  
+- Basically  solving the assignment and detais are in the readme.md file of day 10 .  
+
+**Day 11**. 
+-   
+
+
     
  
 
 ## Yet to Master  
 
 - ![Alt Text](https://img.shields.io/badge/ErrorHandling-red): mastered ✅.  
-- 
+- EJS templating concepts.📌
 
 
 
