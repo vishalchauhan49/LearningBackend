@@ -37,7 +37,8 @@ Detailed information is present inside my '.js file' and README.md files of each
 ## Today's Goal  
 **Day 11: Assignment solving & MongoDb deep dive**  
 
-- 
+- I will go through about  .ejs file , how it's handled and served .    
+- And if this task will complete then i will go for database then.
 
  
 

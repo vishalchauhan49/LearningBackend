@@ -34,9 +34,6 @@
 - .ejs file is the story with blanks, `res.render()` is you filling in the blanks with real words, and what gets mailed out is the completed story — no blanks visible.
 
 
-## What i actually learned 
-- 
-- 
 
 ## Questions I still  have
 - none   
