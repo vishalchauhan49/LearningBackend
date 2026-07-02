@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<input type="text" placeholder="username" id="username" name="username">
+<input type="password" placeholder="password" id="password" name="password">
+<button onclick="senddata()">send</button>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+async function senddata(){
+
+
+    const username=document.getElementById("username").value;
+    const password=document.getElementById("password").value;
+
+const response=await fetch("http://localhost:3001/send",{
+
+
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({username:username,password:password})
+
+
+});
+
+const html= await response.text(); 
+document.body.innerHTML=html;
+
+
+
+
+
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

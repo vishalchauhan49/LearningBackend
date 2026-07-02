@@ -27,8 +27,8 @@ Detailed information is present inside my '.js file' and README.md files of each
 |07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
 |08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| ✅| 
 |09|Deep dive MongoDb|basically i was solving assignment| 🔄 In progress        |     
-|10|Assignment solving|EJS TEMPLATING | 🔄|   
-|11|Assignment solving and MongoDb deep dive|-|-|   
+|10|Assignment solving|EJS TEMPLATING | ✅|   
+|11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  |✅|   
 
 
 
@@ -83,7 +83,8 @@ Always set `expiresIn` or the token never expires.
 - Basically  solving the assignment and detais are in the readme.md file of day 10 .  
 
 **Day 11**. 
--   
+- Practised the core concept of how backend and frontend handles the dynamic data.   
+- Completed EJS embeddings its core methodas and functions like `res.render()` and `app.set("view engine" ,".ejs )`  
 
 
     
@@ -91,8 +92,10 @@ Always set `expiresIn` or the token never expires.
 
 ## Yet to Master  
 
-- ![Alt Text](https://img.shields.io/badge/ErrorHandling-red): mastered ✅.  
-- EJS templating concepts.📌
+- Error handling  ✅.  
+- EJS templating concepts.✅
+- 
+- 
 
 
 
