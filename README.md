@@ -28,17 +28,18 @@ Detailed information is present inside my '.js file' and README.md files of each
 |08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| ✅| 
 |09|Deep dive MongoDb|basically i was solving assignment| 🔄 In progress        |     
 |10|Assignment solving|EJS TEMPLATING | ✅|   
-|11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  |✅|   
+|11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  |✅|  
+|12 | mongodb | CRUD operations  | - |  
 
 
 
 
 
 ## Today's Goal  
-**Day 11: Assignment solving & MongoDb deep dive**  
+**Day 12: Resumed mongodB**  
 
-- I will go through about  .ejs file , how it's handled and served .    
-- And if this task will complete then i will go for database then.
+- I will go through coding stuffs regarding CRUD operations of MongoDb  
+- 
 
  
 
