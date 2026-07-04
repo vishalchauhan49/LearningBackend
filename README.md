@@ -18,29 +18,29 @@ Detailed information is present inside my '.js file' and README.md files of each
 
 | Day |   TOPICS | WHAT I LEARNED |STATUS |
 |-----|----------|--------------|-------|
-|01.  |JWT BASICS| Sign,verify,expiry|✅ done
-|02.  | JWT middleware   |   Protect route with JWT           |   ✅     |
-|03.  | JWT BUG SOLVING         |   Was just fixing         |    ✅   |
-|04.  | Bug Solving        | ERROR HANDLING            |🎯Error Solved      |
-|05  | Mastering Error Handling     |  try catch , try catch in middleware, route level error handling      |  ✅      |
-|06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND      |    ✅   |   
-|07| ASSIGNMENT SOLVING|  🔄In progress     |  🔄In progress          |
+|01.  |JWT BASICS| Sign,verify,expiry|✅ done|
+|02.  | JWT middleware   |   Protect route with JWT  |   ✅     |
+|03.  | JWT BUG SOLVING  |   Was just fixing         |    ✅   |
+|04.  | Bug Solving      | ERROR HANDLING            |🎯Error Solved      |
+|05  | Mastering Error Handling |  try catch , try catch in middleware, route level error handling      |  ✅      |
+|06  | Made an Auth based webpage    |  connecting FRONTEND to BACKEND |    ✅   |   
+|07| ASSIGNMENT SOLVING| solved  On Day 10 by ejs architecture     | ✅   |
 |08| MongoDB | Installing mongoDb (locally and cloud) and setting up mongodb compass.| ✅| 
-|09|Deep dive MongoDb|basically i was solving assignment| 🔄 In progress        |     
-|10|Assignment solving|EJS TEMPLATING | ✅|   
-|11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  |✅|  
-|12 | mongodb | CRUD operations  | - |  
+|09|Deep dive MongoDb|basically i was solving assignment| ✅  |     
+|10|Assignment solving|EJS TEMPLATING | ✅ |   
+|11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  | ✅|   
+|12 | mongodb | CRUD operations  | ✅ |  
+|13|  -   | -       |-        | - |
+
 
 
 
 
 
 ## Today's Goal  
-**Day 12: Resumed mongodB**  
+**Day 13:**  
 
-- I will go through coding stuffs regarding CRUD operations of MongoDb  
-- 
-
+-
  
 
 
@@ -83,9 +83,16 @@ Always set `expiresIn` or the token never expires.
 **Day 09 & 10**  
 - Basically  solving the assignment and detais are in the readme.md file of day 10 .  
 
-**Day 11**. 
+**Day 11** 
 - Practised the core concept of how backend and frontend handles the dynamic data.   
-- Completed EJS embeddings its core methodas and functions like `res.render()` and `app.set("view engine" ,".ejs )`  
+- Completed EJS embeddings its core methodas and functions like `res.render()` and `app.set("view engine" ,".ejs )`.  
+
+**Day 12**  
+- Learned about the implementations of database in express .  
+- used `mongoose` library to connect our express app to cloud data base using a `cluster` link .
+- Got an idea about `clusters` , `database` , `Document model`  basically mongodB's data collection technique.
+- Worked with `mongodb compass`
+
 
 
     
@@ -115,7 +122,7 @@ node index.js
 
 - Node.js + Express
 - jsonwebtoken, dotenv(not used dotenv still)
-- MongoDB + Mongoose (coming soon)
+- MongoDB + Mongoose 
 - Postman for testing
 
 ---

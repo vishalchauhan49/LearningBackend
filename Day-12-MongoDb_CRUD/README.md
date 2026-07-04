@@ -15,8 +15,8 @@
 ## 🎯 what i planned to learn
 - I planned to learn and implement crud operations on mongoDb.
 
-## Confusions/doubts came while learning  
-- none
+## PROBLEMS 
+- **The problem was that their is not any limitations on routes. For example   in "/todo" endpoint if a am sending multiple request (clicking again and again) then it's creating same data with same credentials into the collection ,which i don't want .**
 
 
 
@@ -26,7 +26,7 @@
   
 
 - **Confusion resolved:**   
-  none
+  
 
 ## Questions I still  have
 - none   
