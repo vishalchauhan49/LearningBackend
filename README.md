@@ -12,7 +12,8 @@
 I will be sharing my backend learning journey here. 
 Each folder of my repo shows a day and topics covered inside it .  
 
-Detailed information is present inside my '.js file' and README.md files of each day.
+Detailed information is present inside my '.js file' and README.md files of each day.  
+Note: Full content is coded by me so , it can have grammer mistakes .As told earlier ' I am not a professional till now , thats why name of repo is learning backend "
 
 ## Learning log
 
