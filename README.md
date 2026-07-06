@@ -29,8 +29,9 @@ Detailed information is present inside my '.js file' and README.md files of each
 |09|Deep dive MongoDb|basically i was solving assignment| ✅  |     
 |10|Assignment solving|EJS TEMPLATING | ✅ |   
 |11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  | ✅|   
-|12 | mongodb | CRUD operations  | ✅ |  
+|12 | mongodb | Made Auth-Based `TODO  backend` using database  | ✅ |  
 |13|  -   | -       |-        | - |
+
 
 
 
@@ -87,18 +88,24 @@ Always set `expiresIn` or the token never expires.
 - Practised the core concept of how backend and frontend handles the dynamic data.   
 - Completed EJS embeddings its core methodas and functions like `res.render()` and `app.set("view engine" ,".ejs )`.  
 
-**Day 12**  
+**Day 12**   
+- Made `Auth based TODO BACKEND with database` 
 - Learned about the implementations of database in express .  
 - used `mongoose` library to connect our express app to cloud data base using a `cluster` link .
 - Got an idea about `clusters` , `database` , `Document model`  basically mongodB's data collection technique.
 - Worked with `mongodb compass`
+
+**Day 13** 
+ -  
+
+
 
 
 
     
  
 
-## Yet to Master  
+## Yet to Master [✅ means mastered ] 
 
 - Error handling  ✅.  
 - EJS templating concepts.✅

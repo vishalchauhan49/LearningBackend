@@ -1,7 +1,7 @@
 # Day 12 - Diving deep into MongoDb 
 
-**Date:** 3-july-2026  
-**Topic:** Deep diving into MongoDb (CRUD operations)
+**Date:** 3-6 july - 2026  
+**Topic:** Made an authenticated TODO backend
 
 
 
@@ -21,15 +21,18 @@
 
 
 ## What i actually learned  
--  
+-  **Clearity on Middlewares:-**  
+Middleware has access to req , res object of a route handler and middleware can cancel request-response cycle ,modify these objects & pass control to the next route handler so:-
+> My doubt was `can i make different requests in both middleware and route handler or not ?`**    
+> ANSWER:- YES , we can make check `server.js for more coding info`
 
   
 
-- **Confusion resolved:**   
+
   
 
 ## Questions I still  have
-- none   
+- none  
 - none   
 - none
 
