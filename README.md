@@ -31,7 +31,8 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |10|Assignment solving|EJS TEMPLATING | ✅ |   
 |11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  | ✅|   
 |12 | mongodb | Made Auth-Based `TODO  backend` using database  | ✅ |  
-|13|  -   | -       |-        | - |
+|13|  Password hashing   | Hashing mechanism , functions of hashing     |✅ |
+|14| Input Validation| - | 🔄 |
 
 
 
@@ -40,9 +41,9 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 13:**  
+**Day 14:**  
 
--
+- Input validation 
  
 
 
@@ -97,8 +98,15 @@ Always set `expiresIn` or the token never expires.
 - Worked with `mongodb compass`
 
 **Day 13** 
- -  
+ - Implemented a new library called `bcrypt` for `password hashing`
+ - practised its syntax .
+ - Learned its architecture/mechanism , How it does things ?
+ - Learned about `salting`  
 
+**Day 14**
+
+- 
+- 
 
 
 
@@ -110,7 +118,6 @@ Always set `expiresIn` or the token never expires.
 
 - Error handling  ✅.  
 - EJS templating concepts.✅
-- 
 - 
 
 
