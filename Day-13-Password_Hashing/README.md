@@ -129,3 +129,20 @@ Example:
  Means saltrounds= 3 , ==> 2^ 3 & our hashing algorithm(module) will go through these rounds  
 
 
+## What is planned to learn 
+-  I planned to learn password hashing techniques 
+
+## What i actually learned 
+- I learned full mechanism of password hashing using bcrypt library.
+- Salting concept.
+- bcrypt's functions like `bcrypt.hash(password,saltrounds)`
+
+## Confusion/doubts 
+-  I was thinking that if somehow the salt which we embedded in password to generate hashed password becomes same of more than one person then ???? 
+- Suppose multiple users have same passwords and generated salts are also same thus their hashed passwords will be same . 
+  
+  **SOLVED**:
+  `IMPOSSIBLE`
+  > - bcrypt uses a cryptographically random number generator to create a 16-byte (128 bits ) salt for every single password .
+  > - Thus 128 bits has 2^128 possible uniques salt combinations .This is very big number i.e astronomically large number so probability of having same salts of more than 1 is close to o .
+

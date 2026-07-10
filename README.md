@@ -32,7 +32,8 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |11|Assignment solving and MongoDb deep dive|EJS embeddings, form actions,dynamic data handling using fetch() & forms  | ✅|   
 |12 | mongodb | Made Auth-Based `TODO  backend` using database  | ✅ |  
 |13|  Password hashing   | Hashing mechanism , functions of hashing     |✅ |
-|14| Input Validation| - | 🔄 |
+|14| Input Validation| `Zod library`, Error handling in zod (custom errors , error formatting etc  ) | ✅ |
+|15| Backend of course selling app  | -   | -   |
 
 
 
@@ -41,9 +42,9 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 14:**  
+**Day 15:**  
 
-- Input validation 
+- Designing Backend of a course selling app  
  
 
 
@@ -105,8 +106,8 @@ Always set `expiresIn` or the token never expires.
 
 **Day 14**
 
-- 
-- 
+- Learned about validation using zod library 
+- Error handling in zod 
 
 
 

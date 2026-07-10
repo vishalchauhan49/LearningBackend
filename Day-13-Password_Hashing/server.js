@@ -10,7 +10,7 @@ const bcrypt =require("bcrypt");
 
 
 
-mongoose.connect("");
+mongoose.connect("mongodb+srv://vishalchauhan49:%40vishalgcet202428@hack.i0sfj3w.mongodb.net/todo-application");
 
 
 
@@ -59,7 +59,7 @@ app.post("/signin",async (req,res)=>{
         
            });
 
-    const signIn_time_password=founduser.password;  // Accessing hashed password back from database  
+    const signUp_time_password=founduser.password;  // Accessing hashed password back from database  
      
    const result= await bcrypt.compare(password,signIn_time_password); // Getting hashed password and comparing it with password given by user this time for signing In .
 
