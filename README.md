@@ -33,7 +33,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |12 | mongodb | Made Auth-Based `TODO  backend` using database  | ✅ |  
 |13|  Password hashing   | Hashing mechanism , functions of hashing     |✅ |
 |14| Input Validation| `Zod library`, Error handling in zod (custom errors , error formatting etc  ) | ✅ |
-|15| Backend of course selling app  | -   | -   |
+|15| Backend of course selling app  |`Express Routing`   | 🔄 In progress |
 
 
 
@@ -109,6 +109,9 @@ Always set `expiresIn` or the token never expires.
 - Learned about validation using zod library 
 - Error handling in zod 
 
+**Day 15**
+- Learned about `express Routing`
+- used `express.Router()`
 
 
 
