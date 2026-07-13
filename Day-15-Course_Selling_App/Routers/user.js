@@ -2,12 +2,16 @@ const express=require("express");
 const UserRouter=express.Router() ;
 const jwt=require("jsonwebtoken");
 const { usermodel } = require("../db");
-const {Z}=require("zod");
+const { z }=require("zod");
 const bcrypt=require("bcrypt");
+const { $ZodCheckLowerCase } = require("zod/v4/core");
+const cookieParser = require("cookie-parser");
+const { ParseStatus } = require("zod/v3");
+
 
 const users_jwt_secret="userssecret";  // users jwt secret 
 
-async function authmiddleware(){
+async function authmiddleware(req,res,next){
 
 try{
 
@@ -19,58 +23,57 @@ try{
 
               throw new Error("Invalid credentials ");
              }
-       
+        req.idcopied=verifiedData.id;
              next();
 
 
     }catch(error){
 
-  res.json({message:error.message});
+  next(error.message);
 
     }
 }
 
-UserRouter.post("/signup",async (eq,res)=>{
+UserRouter.post("/signup",async (req,res,next)=>{
 
   // Validating users input using zod   
     const DesiredData=z.object({
-        name:z.String(),
-        email:z.String(),
-        password:z.String().min(3).max(12)
-       });
-
+        name:z.string(),
+        email:z.string(),
+        password:z.string()
+         });
 
     const result=DesiredData.safeParse(req.body);
 
        if(!result.success){
 // wrote return res,json() becuase without return it will execute further code , we havent used try catch that's we have to manually stop the further execution
-         return res.json({message:result.error});   // returning error if validation fails 
-         console.log(result.error.message);
+          console.log(result.error.issues);
+         return res.json({message:result.error.issues});   // returning error if validation fails 
+         
          
        }
     
-      // Here i am haing a confusion that whether should i do const name=req.body.result.data.name ; ????
-  const name=req.body.name;
-  const email=req.body.email;
-  const password=req.body.password;
-  
-   
-   const hashedpassword=bcrypt.hash(password,4);  // let salt rounds be 4 
-     
 
+      // Here i am haing a confusion that whether should i do const name=req.body.result.data.name ; ????
+// GOT answer :- Yes u should write this to get data . Because in runtime execution zod will validate data now it is 100 % sure that data is in the same desired format and also present .
+
+  
+  const { name,email,password }= result.data;
+   
+   
       try {
 
     const isFound= await usermodel.findOne({
             email:email,
        });
 
-    if (isfound){
+    if (isFound){
 
           throw new Error("User Already exists ,please signIn");
      }
 
     else {
-    
+    const hashedpassword= await bcrypt.hash(password,4);  // let salt rounds be 4 
         await usermodel.create({
                name:name,
                email:email,
@@ -85,8 +88,9 @@ UserRouter.post("/signup",async (eq,res)=>{
     
       }catch(error){
    
-          res.json({Error:error.message});
+         
           console.log(error.message);
+          next(error);
           
 
       }
@@ -97,12 +101,53 @@ UserRouter.post("/signup",async (eq,res)=>{
 
 });
 
-UserRouter.post("/signin",(req,res)=>{res.json({message:"signed In"})});
+UserRouter.post("/signin",async (req,res)=>{
+  
+  const email=req.body.email;
+  const password=req.body.password;
 
-UserRouter.get("/purchases",authmiddleware,(req,res)=>{res.send("all courses")});
 
 
 
+
+    const checkuser= await usermodel.findOne({
+      email:email
+    });
+
+    const result=bcrypt.compare(password,checkuser.password);
+     
+      if(!result==true){
+
+      return res.json({message:"Please register first"});
+
+      }
+
+   const usertoken=jwt.sign({id:checkuser._id.toString()},users_jwt_secret); // Assigning jwt tokon to user
+
+   // Despite sending a token as a response we are sending it into headers 
+   
+
+   res.header({usertoken:usertoken});
+   res.send("Y are signedIn");
+
+});
+
+UserRouter.get("/purchases",authmiddleware,(req,res)=>{
+  
+     res.send(`user with id:${req.idcopied}is checking his courses`);
+  
+  
+
+});
+
+
+UserRouter.use((error,req,res,next)=>{
+
+  res.json({message:error.message});
+
+
+
+})
 
 module.exports={
 

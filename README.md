@@ -34,6 +34,11 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |13|  Password hashing   | Hashing mechanism , functions of hashing     |✅ |
 |14| Input Validation| `Zod library`, Error handling in zod (custom errors , error formatting etc  ) | ✅ |
 |15| Backend of course selling app  |`Express Routing`   | 🔄 In progress |
+|16|Backend of course selling app continued| same | 🔄 |
+|17| Backend of a course selling app | admin end point is completed | 🔄 |
+|18|Backend of a course selling appp |      |      |
+
+
 
 
 
@@ -42,10 +47,9 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 15:**  
+**Day 17:**  
 
-- Designing Backend of a course selling app  
- 
+- 
 
 
 
@@ -109,7 +113,7 @@ Always set `expiresIn` or the token never expires.
 - Learned about validation using zod library 
 - Error handling in zod 
 
-**Day 15**
+**Day 15 , 16, 17**
 - Learned about `express Routing`
 - used `express.Router()`
 
@@ -122,7 +126,7 @@ Always set `expiresIn` or the token never expires.
 
 - Error handling  ✅.  
 - EJS templating concepts.✅
-- 
+- MongoDb to be deep dived 
 
 
 

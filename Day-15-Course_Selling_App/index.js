@@ -5,7 +5,10 @@ const { UserRouter }=require("./Routers/user");
 const { courseRouter }=require("./Routers/course");
 const { adminRouter } = require("./Routers/admin");
 
-const {usermodel ,coursemodel,adminmodel, purchasemodel}=require("./db");
+app.use(express.json());
+
+
+
 
 
 
@@ -39,7 +42,7 @@ By doing this ur app/website will run in production while developers can work up
   
    app.listen(3000);
    console.log("at port 3000");
-   
+  
  }
 
  main();

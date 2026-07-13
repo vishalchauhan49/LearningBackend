@@ -1,6 +1,6 @@
 const { Router }=require("express") // another way to use router 
 const courseRouter = Router();
-
+const { coursemodel }=require("../db");
 
 
 courseRouter.get("/allcourses",(req,res)=>{
