@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 const { email, string } = require("zod");
-const course = require("./Routers/course");
+//const course = require("./Routers/course");
 const Schema=mongoose.Schema;
 const ObjectId=mongoose.ObjectId;
 

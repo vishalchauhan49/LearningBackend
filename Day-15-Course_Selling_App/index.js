@@ -17,6 +17,8 @@ app.use(express.json());
 
 
 
+
+
 //app.use("api/v1/user",userRouter) : Means if a request will come on this endpoint then it will be handled by UserRouter
 
 

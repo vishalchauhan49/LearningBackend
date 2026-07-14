@@ -2,9 +2,9 @@ const { Router, response }= require("express");
 const adminRouter=Router();
 const {z}=require("zod");
 const bcrypt=require("bcrypt");
-const { adminmodel, coursemodel, purchasemodel } = require("../db");
+const { adminmodel, coursemodel } = require("../db");
 const jwt=require("jsonwebtoken");
-const course = require("./course");
+//const course = require("./course");
 const Admin_jwt_secret="adminsecret";   // admins secret 
 
 async function authmiddleware(req,res,next){

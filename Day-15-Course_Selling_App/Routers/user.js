@@ -1,8 +1,8 @@
 const express=require("express");
 const UserRouter=express.Router() ;
 const jwt=require("jsonwebtoken");
-const { usermodel } = require("../db");
-const { z }=require("zod");
+const { usermodel, purchasemodel } = require("../db");
+const { z, check }=require("zod");
 const bcrypt=require("bcrypt");
 const { $ZodCheckLowerCase } = require("zod/v4/core");
 const cookieParser = require("cookie-parser");
@@ -101,40 +101,89 @@ UserRouter.post("/signup",async (req,res,next)=>{
 
 });
 
-UserRouter.post("/signin",async (req,res)=>{
-  
-  const email=req.body.email;
-  const password=req.body.password;
+UserRouter.post("/signin",async (req,res,next)=>{
+   try{
+ 
+           const email=req.body.email;
+           const password=req.body.password;
 
+           const checkuser= await usermodel.findOne({
+                      email:email
+            });
+      
+    
+               if(!checkuser){
 
+                    res.json({message:"please sign Up first "});
 
-
-
-    const checkuser= await usermodel.findOne({
-      email:email
-    });
-
-    const result=bcrypt.compare(password,checkuser.password);
+               }
+              
+                 
+           const result=bcrypt.compare(password,checkuser.password);
      
-      if(!result==true){
+                if(!result)
+              {
+                  throw new Error("Wrong password , please enter right password  ");
+              }
 
-      return res.json({message:"Please register first"});
-
-      }
-
-   const usertoken=jwt.sign({id:checkuser._id.toString()},users_jwt_secret); // Assigning jwt tokon to user
+           const usertoken=jwt.sign({id:checkuser._id.toString()},users_jwt_secret); // Assigning jwt tokon to user
 
    // Despite sending a token as a response we are sending it into headers 
    
 
-   res.header({usertoken:usertoken});
-   res.send("Y are signedIn");
+              res.header({usertoken:usertoken});
+              res.json({message:"Y are signedIn"});
+
+      }catch(error){
+          next(error);
+      }
 
 });
 
-UserRouter.get("/purchases",authmiddleware,(req,res)=>{
+
+// Route to purchase a course
+UserRouter.post("/course",authmiddleware,async (req,res)=>{
+   
+  const userId=req.idcopied;
+// Accepting a course id to purchase a course but eventually we will be using a real time illustration .
+  const courseid=req.body.course;
+
+  const purchasedata=await purchasemodel.create({
+         userId:userId,
+         courseId:courseid
+  });
+
+  console.log(purchasedata);
   
-     res.send(`user with id:${req.idcopied}is checking his courses`);
+
+});
+
+UserRouter.get("/purchases",authmiddleware,async (req,res,next)=>{
+     
+  try{
+        const arr=[];
+        const userid=req.idcopied;
+
+       await (await purchasemodel.find({userId:userid})).forEach((data)=>{
+
+           arr.push(data);
+           console.log(data);
+           
+
+       })
+    
+ 
+
+
+
+
+      }catch(error){
+
+   next(error);
+
+
+
+      }
   
   
 
@@ -143,7 +192,7 @@ UserRouter.get("/purchases",authmiddleware,(req,res)=>{
 
 UserRouter.use((error,req,res,next)=>{
 
-  res.json({message:error.message});
+  res.status(401).json({message:error.message});
 
 
 
