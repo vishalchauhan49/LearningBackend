@@ -36,7 +36,9 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |15| Backend of course selling app  |`Express Routing`   | 🔄 In progress |
 |16|Backend of course selling app continued| same | 🔄 |
 |17| Backend of a course selling app | admin end point is completed | 🔄 |
-|18|Backend of a course selling appp |      |      |
+|18| Created own NPM package | npm package , npx  |  ✅    |
+|19| Backend of course selling app |   - |  -    |   
+
 
 
 
@@ -47,7 +49,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 18:**  Backend of course selling app resumed 
+**Day 19:**  Backend of course selling app resumed 
 
 - 
 
@@ -115,8 +117,10 @@ Always set `expiresIn` or the token never expires.
 
 **Day 15 , 16, 17**
 - Learned about `express Routing`
-- used `express.Router()`
+- used `express.Router()`. 
 
+**Day 18** 
+- `Created own NPM package` 
 
 
     
