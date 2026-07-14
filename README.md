@@ -47,7 +47,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 17:**  
+**Day 18:**  Backend of course selling app resumed 
 
 - 
 
