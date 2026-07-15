@@ -39,12 +39,30 @@ By doing this ur app/website will run in production while developers can work up
 */
 
  async function main(){
+  
+   try{
+        
+      const connection=   await mongoose.connect("mongodb+srv://vishalchauhan49:%40vishalgcet202428@hack.otjis3y.mongodb.net/course_selling_App");
+     
+        
 
-   await mongoose.connect("mongodb+srv://vishalchauhan49:%40vishalgcet202428@hack.otjis3y.mongodb.net/course_selling_App");
-  
-   app.listen(3000);
-   console.log("at port 3000");
-  
+         console.log("connected to database");
+         app.listen(3000,()=>{console.log("started at port 3000");
+
+
+});
+    
+   }catch(err){
+
+
+console.log(err.message);
+
+   }
+
  }
 
+
  main();
+
+
+ 

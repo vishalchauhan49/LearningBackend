@@ -1,12 +1,14 @@
 const express=require("express");
 const UserRouter=express.Router() ;
 const jwt=require("jsonwebtoken");
-const { usermodel, purchasemodel } = require("../db");
+const { usermodel, purchasemodel ,coursemodel} = require("../db");
 const { z, check }=require("zod");
 const bcrypt=require("bcrypt");
 const { $ZodCheckLowerCase } = require("zod/v4/core");
 const cookieParser = require("cookie-parser");
 const { ParseStatus } = require("zod/v3");
+const { isValidObjectId, isObjectIdOrHexString } = require("mongoose");
+//const course = require("./course");
 
 
 const users_jwt_secret="userssecret";  // users jwt secret 
@@ -141,45 +143,74 @@ UserRouter.post("/signin",async (req,res,next)=>{
 });
 
 
-// Route to purchase a course
-UserRouter.post("/course",authmiddleware,async (req,res)=>{
-   
-  const userId=req.idcopied;
+// Route to purchase a course , And displaying purchased course title & price 
+UserRouter.post("/course",authmiddleware,async (req,res,next)=>{
+    
+  try{
+         const userId=req.idcopied;
 // Accepting a course id to purchase a course but eventually we will be using a real time illustration .
-  const courseid=req.body.course;
+      const courseid=req.body.course;
+      console.log(courseid);
+    
+ // isvlaideObjetId returns true / false      
+         if(!(isValidObjectId(courseid))){
+           throw new Error("ID IS NOT CORRECT");
+         }
+       
+        
+  //Extracting purchased course's title & price       
+         const coursedetails=await coursemodel.findOne({_id:courseid});
+                if(!coursedetails){
 
-  const purchasedata=await purchasemodel.create({
-         userId:userId,
-         courseId:courseid
-  });
+                  return res.json({Error_message:"Something went wrong"});
+                }
+         
+        
+         const purchasedcourse=await purchasemodel.create({
+                     userId:userId,
+                     courseId:courseid,
+                     coursetitle:`${coursedetails.title}`,
+                     courseprice:`${coursedetails.price}`
+       });
+           //console.log(purchasedcourse);
+ 
+       res.json({DETAILS:`COURSE: ${purchasedcourse.coursetitle}   PRICE:  ${purchasedcourse.courseprice} `});
+               
+      }catch(err){
 
-  console.log(purchasedata);
-  
+        next(err);
+        console.log(err);
+        
+      }
 
-});
+ });
 
 UserRouter.get("/purchases",authmiddleware,async (req,res,next)=>{
      
   try{
-        const arr=[];
-        const userid=req.idcopied;
-
-       await (await purchasemodel.find({userId:userid})).forEach((data)=>{
+           const arr=[];
+           const userid=req.idcopied;
+         
+           
+      await (await purchasemodel.find({userId:userid})).forEach((data)=>{
 
            arr.push(data);
            console.log(data);
+           console.log(arr);
+           
            
 
-       })
+       });
+
+       
+
     
- 
-
-
-
-
-      }catch(error){
-
-   next(error);
+     res.json({COURSES_ARE: arr });
+     
+      }catch(err){
+   console.log(err);
+   
+   next(err);
 
 
 
@@ -190,9 +221,13 @@ UserRouter.get("/purchases",authmiddleware,async (req,res,next)=>{
 });
 
 
-UserRouter.use((error,req,res,next)=>{
+UserRouter.use((err,req,res,next)=>{
 
-  res.status(401).json({message:error.message});
+  res.status(401).json({message:`${err}`});
+  console.log(err.message);
+  
+  
+  
 
 
 

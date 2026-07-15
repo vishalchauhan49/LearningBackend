@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-const { email, string } = require("zod");
+const { email, string, number } = require("zod");
 //const course = require("./Routers/course");
 const Schema=mongoose.Schema;
 const ObjectId=mongoose.ObjectId;
@@ -30,7 +30,9 @@ const admin =new Schema({
 
 const purchases= new Schema({
   userId:ObjectId,
-  courseId:ObjectId
+  courseId:ObjectId,
+  coursetitle:string,
+  courseprice:number
 })
 
 
