@@ -36,8 +36,9 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |15| Backend of course selling app  |`Express Routing`   | 🔄 In progress |
 |16|Backend of course selling app continued| same | 🔄 |
 |17| Backend of a course selling app | admin end point is completed | 🔄 |
-|18| Created own NPM package | npm package , npx  |  ✅    |
-|19| Backend of course selling app |   - |  -    |   
+|18| `Created` own NPM package | npm package , npx  |  ✅    |
+|19| Backend of course selling app | some `features` to add  |  🔄    | 
+|20|      |          |        |     
 
 
 
@@ -49,7 +50,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 19:**  Backend of course selling app resumed 
+**Day 20:** Adding some features in Backend of course selling app
 
 - 
 
@@ -121,6 +122,10 @@ Always set `expiresIn` or the token never expires.
 
 **Day 18** 
 - `Created own NPM package` 
+
+**Day 19** 
+- 90 % of Backend of course selling app completed , some features to include (check readme.md file of Day 19 for more details).
+
 
 
     

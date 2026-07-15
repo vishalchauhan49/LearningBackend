@@ -8,7 +8,7 @@ const { $ZodCheckLowerCase } = require("zod/v4/core");
 const cookieParser = require("cookie-parser");
 const { ParseStatus } = require("zod/v3");
 const { isValidObjectId, isObjectIdOrHexString } = require("mongoose");
-//const course = require("./course");
+
 
 
 const users_jwt_secret="userssecret";  // users jwt secret 
@@ -26,6 +26,8 @@ try{
               throw new Error("Invalid credentials ");
              }
         req.idcopied=verifiedData.id;
+        //console.log(req.idcopied);
+        
              next();
 
 
@@ -75,6 +77,7 @@ UserRouter.post("/signup",async (req,res,next)=>{
      }
 
     else {
+
     const hashedpassword= await bcrypt.hash(password,4);  // let salt rounds be 4 
         await usermodel.create({
                name:name,
@@ -83,7 +86,8 @@ UserRouter.post("/signup",async (req,res,next)=>{
               
         });
 
-     console.log("successfully created a user in database");
+     //console.log("successfully created a user in database");
+     res.json({"STATUS":"Signed Up successfully"});
         
 
     }
@@ -91,7 +95,7 @@ UserRouter.post("/signup",async (req,res,next)=>{
       }catch(error){
    
          
-          console.log(error.message);
+         // console.log(error.message);
           next(error);
           
 
@@ -120,9 +124,10 @@ UserRouter.post("/signin",async (req,res,next)=>{
 
                }
               
-                 
-           const result=bcrypt.compare(password,checkuser.password);
-     
+       // Returns true/false           
+           const result= await bcrypt.compare(password,checkuser.password);
+       //console.log(result);
+           
                 if(!result)
               {
                   throw new Error("Wrong password , please enter right password  ");
@@ -149,10 +154,12 @@ UserRouter.post("/course",authmiddleware,async (req,res,next)=>{
   try{
          const userId=req.idcopied;
 // Accepting a course id to purchase a course but eventually we will be using a real time illustration .
-      const courseid=req.body.course;
-      console.log(courseid);
+      const courseid=req.body.course;    
+     // console.log(courseid);
     
- // isvlaideObjetId returns true / false      
+
+ // isvlaideObjetId returns true / false and takes string as well as objectId as parameter , so we can pass courseid directly to it .It is a mongoose function which checks whether the given id is valid objectId or not .     Returns true if it is valid objectId otherwise false .
+
          if(!(isValidObjectId(courseid))){
            throw new Error("ID IS NOT CORRECT");
          }
@@ -190,8 +197,12 @@ UserRouter.get("/purchases",authmiddleware,async (req,res,next)=>{
   try{
            const arr=[];
            const userid=req.idcopied;
-         
-           
+
+    // isvalideObjectId returns true / false and takes string as well as objectId as parameter , so we can pass courseid directly to it .It is a mongoose function which checks whether the given id is valid objectId or not .     
+    
+           if(!isValidObjectId(userid)){
+            throw new Error("Invalid user request");
+           }
       await (await purchasemodel.find({userId:userid})).forEach((data)=>{
 
            arr.push(data);

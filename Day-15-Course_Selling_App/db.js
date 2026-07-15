@@ -1,6 +1,5 @@
 const mongoose=require("mongoose");
 const { email, string, number } = require("zod");
-//const course = require("./Routers/course");
 const Schema=mongoose.Schema;
 const ObjectId=mongoose.ObjectId;
 
@@ -17,7 +16,8 @@ const courses=new Schema({
  title:string,
  description:string,
  price:Number,
- creatorId:ObjectId
+ creatorId:ObjectId,
+ role:string
 
 })
 

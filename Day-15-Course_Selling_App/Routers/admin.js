@@ -4,7 +4,6 @@ const {z}=require("zod");
 const bcrypt=require("bcrypt");
 const { adminmodel, coursemodel } = require("../db");
 const jwt=require("jsonwebtoken");
-//const course = require("./course");
 const Admin_jwt_secret="adminsecret";   // admins secret 
 
 async function authmiddleware(req,res,next){
@@ -79,7 +78,7 @@ adminRouter.post("/signUp",async (req,res,next)=>{
                    });
 
         //console.log("successfully created a Adminuser in database");
-        res.json.status(200).json({Status:"Signed Up Successfully"});
+        res.status(200).json({Status:"Signed Up Successfully"});
         
 
     }
@@ -103,14 +102,17 @@ adminRouter.post("/signin",async (req,res,next)=>{
            const checkadmin= await adminmodel.findOne({
             email:email
         });
-           
-
+              
+        if(!checkadmin){
+            throw new Error("Admin not found , please signUp");
+        }
+   
           const result=await bcrypt.compare(password,checkadmin.password);
          
 
                 if(!result){
     
-                   throw new Error("Invakid credentials of admin");
+                   throw new Error("Invalid credentials of admin");
                 }
     
            const admintoken=jwt.sign({id:checkadmin._id.toString()},Admin_jwt_secret); // Assigning jwt tokon to user
@@ -131,15 +133,16 @@ adminRouter.post("/signin",async (req,res,next)=>{
 });
 
 
-// Returning all courses of admin 
+// Returning all courses of admin only 
 adminRouter.get("/courses",authmiddleware,async (req,res ,next)=>{
       
    try{
+
             const adminId=req.idcopied;   // from middleware i got this 
            
-            if(!adminId){
+            if(!adminId){  // or we can write (!isValidObjectId(adminId))  as well
             
-      res.send("invalid");
+      res.json({ERROR_MESSAGE:"Wrong admin request"});
             }
 
  // find function gives all the docuements with the required credenials and forEach is for traversing each document . Both are time taking process
@@ -148,7 +151,7 @@ adminRouter.get("/courses",authmiddleware,async (req,res ,next)=>{
             await (await coursemodel.find({creatorId:adminId})).forEach((course)=>{
 
    //  creating an array of objects containing courses title , price
-            arr.push({title:course.title,price:course.price}); 
+            arr.push({title:course.title,price:course.price,role:course.role}); 
     });
 
 
@@ -175,20 +178,21 @@ adminRouter.post("/course",authmiddleware,async (req,res,next)=>{
        const price=req.body.price;
           
  
-
-      const created_course_id= await coursemodel.create({
+  
+       const created_course_id= await coursemodel.create({
           title:title,
           description:description,
           price:price,
-          creatorId:req.idcopied         // from middleware we are getting the id by modifing req object
+          creatorId:req.idcopied ,
+          role:"admin"        // from middleware we are getting the id by modifing req object
         });
 
-        // console.log(created_course_id);
+         console.log(created_course_id);
          
             res.header({id:(created_course_id._id)});     
-            res.send(` TITLE:${title} 
-                 DESCRIPTION:${description}
-                 PRICE:${price}`);
+            res.send(` TITLE:${created_course_id.title} 
+                 DESCRIPTION:${created_course_id.description}
+                 PRICE:${created_course_id.price}`);
       
       }catch(error){
 
@@ -204,13 +208,17 @@ adminRouter.put("/course",authmiddleware,async ( req,res,next)=>{
 
    try {
           // asking an admin to give a course id to update it
-          const courseId=req.headers.id;
+          const courseId=req.body.id;
+          const newtitle=req.body.title;
+          const newdescription=req.body.description;
+          const newprice=req.body.price;
    
   //Note :- changes want will be accepted from user bya req.body.    
+
           const result= await coursemodel.findOneAndUpdate(
                          {  _id:courseId },
                          { 
-                            $set:{title:"new title 2",description:"new description"}
+                            $set:{title:newtitle,description:newdescription,price:newprice}
                          },
                          {new:true}
                       );  
@@ -230,7 +238,7 @@ adminRouter.delete("/course",authmiddleware,async (req,res,next)=>{
     try{
       // Asking admin to provide the corse id to delete a course
     
-         const courseid= req.headers.id;
+         const courseid= req.body.id;
            
            if(!courseid)
            {
