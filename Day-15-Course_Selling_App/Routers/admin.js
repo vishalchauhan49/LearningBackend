@@ -6,6 +6,7 @@ const { adminmodel, coursemodel } = require("../db");
 const jwt=require("jsonwebtoken");
 const Admin_jwt_secret="adminsecret";   // admins secret 
 
+
 async function authmiddleware(req,res,next){
 
 try{
@@ -166,6 +167,34 @@ adminRouter.get("/courses",authmiddleware,async (req,res ,next)=>{
            
    }
    });
+
+
+// Admin can see all the courses in the database irrespective of who created it like user . Admin can see as well as create , delete , update courses in the database.
+adminRouter.get("/all",authmiddleware, async(req,res,next)=>{
+
+     try{
+
+          const allcourses=  await coursemodel.find({});
+          console.log("yes ");
+
+              if(typeof(allcourses)=="object"){
+   
+                    res.json({ALL_COURSES:allcourses});
+                   // console.log("yes 2");
+              }
+              else{
+              //sconsole.log("yes 1");
+                   throw new Error("something went wrong");
+              }
+        }catch(error){
+            next(error);   
+   }
+
+
+});
+
+
+
 
 
 // For creating a course    

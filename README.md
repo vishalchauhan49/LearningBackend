@@ -38,7 +38,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |17| Backend of a course selling app | admin end point is completed | 🔄 |
 |18| `Created` own NPM package | npm package , npx  |  ✅    |
 |19| Backend of course selling app | some `features` to add  |  🔄    | 
-|20|      |          |        |     
+|20|  Feature added     |   admin route updated       |    ✅    |     
 
 
 
@@ -50,7 +50,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 20:** Adding some features in Backend of course selling app
+**Day 21:** To be started 
 
 - 
 
@@ -125,6 +125,9 @@ Always set `expiresIn` or the token never expires.
 
 **Day 19** 
 - 90 % of Backend of course selling app completed , some features to include (check readme.md file of Day 19 for more details).
+
+**Day 20**
+- In Admin router , one functionality added :- Admin can see his courses as well as all the courses irrespective who created it . Before admin was only able to access his courses . 
 
 
 

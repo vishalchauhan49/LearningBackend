@@ -31,7 +31,7 @@ next(err);
 }
 });
 
-      
+    
 
 courseRouter.get("/preview",async (req,res,next)=>{
 
