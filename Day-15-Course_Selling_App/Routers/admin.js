@@ -245,7 +245,9 @@ adminRouter.put("/course",authmiddleware,async ( req,res,next)=>{
   //Note :- changes want will be accepted from user bya req.body.    
 
           const result= await coursemodel.findOneAndUpdate(
-                         {  _id:courseId },
+                         {  _id:courseId,
+                              creatorId:req.idcopied
+                          },
                          { 
                             $set:{title:newtitle,description:newdescription,price:newprice}
                          },
