@@ -38,7 +38,9 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |17| Backend of a course selling app | admin end point is completed | 🔄 |
 |18| `Created` own NPM package | npm package , npx  |  ✅    |
 |19| Backend of course selling app | some `features` to add  |  🔄    | 
-|20|  Feature added     |   admin route updated       |    ✅    |     
+|20|  Feature added     |   admin route updated       |    ✅    |  
+|21| New project started | till now | 🔄 |
+
 
 
 
@@ -50,7 +52,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 21:** To be started 
+**Day 22:** To be started 
 
 - 
 
