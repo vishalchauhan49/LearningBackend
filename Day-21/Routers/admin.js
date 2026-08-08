@@ -8,7 +8,7 @@ const { INVALID } = require("zod/v3");
 const ADMIN_JWT_SECRET="example2";
 
 
-async function authmiddlware(req,res,next){
+async function authmiddleware(req,res,next){
 
    const admintoken= req.headers.admintoken;
    
@@ -137,7 +137,7 @@ catch(err){
 });
 
 
-adminRouter.post("/event",authmiddlware,(req,res,next)=>{
+adminRouter.post("/event",authmiddleware,(req,res,next)=>{
 
   const desiredFormat= z.object({
       title:z.string(),
@@ -172,7 +172,7 @@ console.log(event);
 
 });
 
-adminRouter.put("/event",authmiddlware,async (req,res,next)=>{
+adminRouter.put("/event",authmiddleware,async (req,res,next)=>{
  // .regex() is a custom method to check for type objectID 
  // z.string(): This tells Zod that the incoming data must be a text string.
  // .regex(...): This applies a Regular Expression (RegEx) rule to inspect the characters inside that string.
@@ -225,7 +225,7 @@ next(error);
 });
 
 
-adminRouter.delete("/event",authmiddlware,(req,res,next)=>{
+adminRouter.delete("/event",authmiddleware,(req,res,next)=>{
 
     const desiredFormat = z.string().regex(/^[0-9a-fA-F{24}$]/);
 
@@ -262,7 +262,7 @@ throw new Error("Access Denied");
 
 });
 
-adminRouter.get("/event",(req,res,next)=>{
+adminRouter.get("/event",authmiddleware,(req,res,next)=>{
     
       const desiredFormat = z.string().regex(/^[0-9a-fA-F{24}$]/);
 

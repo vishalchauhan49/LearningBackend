@@ -40,7 +40,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |19| Backend of course selling app | some `features` to add  |  🔄    | 
 |20|  Feature added     |   admin route updated       |    ✅    |  
 |21| New project started | till now | 🔄 | 
-|22| Workin on previous project | `.regex()` & previous topics | 🔄 |
+|22| Working on previous project | `.regex()` & previous topics | 🔄 |
 |23|- | - |-|
 
 
@@ -132,7 +132,8 @@ Always set `expiresIn` or the token never expires.
 - 90 % of Backend of course selling app completed , some features to include (check readme.md file of Day 19 for more details).
 
 **Day 20**
-- In Admin router , one functionality added :- Admin can see his courses as well as all the courses irrespective who created it . Before admin was only able to access his courses .     
+- In Admin router , one functionality added :- Admin can see his courses as well as all the courses irrespective who created it . Before admin was only able to access his courses .  
+
 **Day 21,22**   
 - Working on a project `College Event Manager ` 
 
