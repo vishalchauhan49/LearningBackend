@@ -39,7 +39,10 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |18| `Created` own NPM package | npm package , npx  |  ✅    |
 |19| Backend of course selling app | some `features` to add  |  🔄    | 
 |20|  Feature added     |   admin route updated       |    ✅    |  
-|21| New project started | till now | 🔄 |
+|21| New project started | till now | 🔄 | 
+|22| Workin on previous project | `.regex()` & previous topics | 🔄 |
+|23|- | - |-|
+
 
 
 
@@ -52,7 +55,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 22:** To be started 
+**Day 23:** To be started 
 
 - 
 
@@ -129,7 +132,9 @@ Always set `expiresIn` or the token never expires.
 - 90 % of Backend of course selling app completed , some features to include (check readme.md file of Day 19 for more details).
 
 **Day 20**
-- In Admin router , one functionality added :- Admin can see his courses as well as all the courses irrespective who created it . Before admin was only able to access his courses . 
+- In Admin router , one functionality added :- Admin can see his courses as well as all the courses irrespective who created it . Before admin was only able to access his courses .     
+**Day 21,22**   
+- Working on a project `College Event Manager ` 
 
 
 

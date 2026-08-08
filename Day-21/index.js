@@ -1,7 +1,9 @@
 const express= require("express");
 const app = express();
 
-const { userRouter,adminRouter,eventRouter}=require("./Routers");
+const { userRouter } = require("./Routers/user");
+const { adminRouter } = require("./Routers/admin");
+const { eventRouter } = require("./Routers/events");
 const mongoose= require("mongoose");
 
 
@@ -11,6 +13,8 @@ app.use("/user",userRouter);
 app.use("/admin",adminRouter);
 app.use("/events",eventRouter);
 
+main();
+
 
 
 
@@ -18,13 +22,19 @@ app.use("/events",eventRouter);
 async function main(){
 
 
-mongoose.connect("");
+const status= await mongoose.connect("mongodb+srv://vishalchauhan49:%40vishalgcet202428@hack.otjis3y.mongodb.net/college");
 
+   if(!status){
 
+ throw new Error("not connected ");
+
+   }
+
+  console.log(" success");
+  app.listen(3003);
 
 
 }
 
 
 
-app.listen(3000,()=>{console.log("working at port 3000")});

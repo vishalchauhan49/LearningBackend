@@ -9,6 +9,7 @@
 
 ## What i have learned 
 - nothing new today just read some docs of mongoose library .
+- Learned about `.regex() method to check for valid objectID using zod`    
 
 
 

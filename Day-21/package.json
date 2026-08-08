@@ -1,0 +1,17 @@
+{
+  "name": "day-21",
+  "version": "1.0.0",
+  "description": "**Day 21:** Added one feature to admin route successfully",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
+}
