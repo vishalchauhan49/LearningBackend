@@ -29,7 +29,7 @@ const admin= new Schema ({
 const events= new Schema ({
     
     title:string,
-    Time:string,
+    time:string,
     venue:string,
     description:string,
     createdby:ObjectId

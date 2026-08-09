@@ -25,6 +25,7 @@ const admin= await adminmodel.findOne({
    _id:verified_data.id
      
 });
+
 req.copiedData=admin._id;
 next();
 
@@ -41,7 +42,7 @@ const desiredFormat=z.object({
  email:z.string(),
  password:z.string().min(3),
 
-});
+}); 
 
 const result= desiredFormat.safeParse(req.body);
 
@@ -127,9 +128,9 @@ res.header({admin_token:adminToken});
 res.json({Message:"Signed In successfully"});
 
     }
-catch(err){
+catch(error){
 
-  next(err);
+  next(error);
 
 
     }
@@ -137,7 +138,8 @@ catch(err){
 });
 
 
-adminRouter.post("/event",authmiddleware,(req,res,next)=>{
+adminRouter.post("/event",authmiddleware,async(req,res,next)=>{
+
 
   const desiredFormat= z.object({
       title:z.string(),
@@ -154,32 +156,48 @@ adminRouter.post("/event",authmiddleware,(req,res,next)=>{
     }
 
  
- const { title ,time,venue,description }= result.data;
-
+ const { title ,time,venue,description } = result.data;
   
-const event = await eventmodel.create({
+ try{
 
-   title:title,
-   time:time,
-   venue:venue,
-   description:description,
-   createdby:req.copiedData
+  const data=req.copiedData.toString(); 
+  const is_present =  await adminmodel.findOne({_id:data});
+  
+    if(is_present)
+    {
+       const event = await eventmodel.create({
+       title:title,
+       time:time,
+       venue:venue,
+       description:description,
+       createdby:req.copiedData
+      });
+
+         res.json({Message:"successfully created an event "});
+         //console.log(event);
+    }
+    else{
+        throw new Error("SIGN IN FIRST");
+    }
 
 
-});
- res.json({Message:"successfully created an event "});
-console.log(event);
+ }catch(error){
+     next(error);
+
+}
 
 });
 
 adminRouter.put("/event",authmiddleware,async (req,res,next)=>{
- // .regex() is a custom method to check for type objectID 
- // z.string(): This tells Zod that the incoming data must be a text string.
- // .regex(...): This applies a Regular Expression (RegEx) rule to inspect the characters inside that string.
- // "Invalid ID": This is the custom error message Zod will throw if the string fails the RegEx rule. 
+ 
+ // getting eventid form admin in header
+
+  const eventId= req.headers.eventid;
   
+  
+
   const desiredFormat= z.object({
-      eventId:z.string().regex(/^[0-9a-fA-F]{24}$/ , " INVALID ID"),
+     // eventId:z.string(),
       newTitle:z.string(),
       newTime:z.string(),
       newVenue:z.string(),
@@ -197,25 +215,43 @@ const result = desiredFormat.safeParse(req.body);
 // Like we will be accepting specific filed admin want to change.
 
 try{
-    const { eventId, newTitle ,newTime ,newVenue, newDescription } = result.data;
+    const { newTitle ,newTime ,newVenue, newDescription } = result.data;
    
-const found = await eventmodel.findOne({_id:eventId});
+    const found = await eventmodel.findOne({_id:eventId});
+    //console.log(found);
+    //console.log(found.createdby);
+    //console.log(req.copiedData);
+  
+  
+    
+// Both were in type :- objectId so we compared it by converting it into string.
+// We can use built-in method of mongoose to comapre 2 objectId :- .equals() 
 
-    if(found.createdby == req.copiedData)
+// if( found.createdBy.equals(req.copiedData)) { }
+   
+    if(found.createdby.toString() == req.copiedData.toString())
     {
       const result = await eventmodel.findOneAndUpdate(
     {
-   _id:req.copiedData,
+   _id:eventId,
       },  
     {
       $set:{title:newTitle , time:newTime , venue:newVenue , description:newDescription}
     
       },
     
-         { new : true} 
+         {returnDocument:"after"}
 );
-    }
+ res.json({Message:"successfully Updated event"});    
 
+    }
+    else{
+
+throw new Error(" ACCESS DENIED ");
+
+
+    }
+    
   
 }catch(error){
 
@@ -225,66 +261,73 @@ next(error);
 });
 
 
-adminRouter.delete("/event",authmiddleware,(req,res,next)=>{
+adminRouter.delete("/event",authmiddleware,async(req,res,next)=>{
 
-    const desiredFormat = z.string().regex(/^[0-9a-fA-F{24}$]/);
+// Accepting eventId from admin in headers and validating it using zod
+    const desiredFormat= z.string();
 
-    const result = desiredFormat.safeParse(req.body);  
+    const result= desiredFormat.safeParse(req.headers.eventid);
+   // console.log(result);
+    
 
-       if(!result)
-       {
-        res.json({Error_message:result.error.issues});
-       }
-      
-   try{    
-  // getting event id from admin which he wants to delete  
-       const { id } = result.data;
-     const found = await eventmodel.findOne({_id:id});
+     if(!result){
+        res.json({"Error_message":result.error.issues});
+     }
 
-       if(found.createdby == req.copiedData)
-       {
+   try{
+    
+    const found = await eventmodel.findOne({_id:result.data});
 
-       await eventmodel.findOneAndDelete({_id:id});
-       res.json({Message:"succesfully deleted a event "});
-       res.header({creatorId:creatorId});
+// We used this equals method to compare objectId , whereas we can convert both of them in string() but this is built-in function of mongoose (.equals());
+   if(found.createdby.equals(req.copiedData))
+   {     
+    await eventmodel.findOneAndDelete({_id:result.data});
+    res.json({Message:"Successfully Deleted Event"});
+   }
 
-       }
-     else {
+   else{
 
-throw new Error("Access Denied");
+throw new Error("ACCESS DENIED");
 
-     }  
+   }
    }catch(error){
 
     next(error);
-   }
 
-
+   }  
 });
 
-adminRouter.get("/event",authmiddleware,(req,res,next)=>{
-    
-      const desiredFormat = z.string().regex(/^[0-9a-fA-F{24}$]/);
 
-    const result = desiredFormat.safeParse(req.body);  
+adminRouter.get("/event",authmiddleware,async(req,res,next)=>{
 
-       if(!result)
-       {
-        res.json({Error_message:result.error.issues});
-       }
-      
-   try{    
-       const id= req.body.id;
+  try{
 
-    const returnedEvent =  await eventmodel.findOne({_id:id});   
-    res.json(returnedEvent);
+    const data= req.copiedData;  
+    // const data = "6a7882324ffebc26d96f8f72";
 
-   }catch(error){
+ // DOUBT:-
+ // When i am searching an event by just only req.copiedData its giving correct answer .
+ // When i am writing req.copiedData.toString() :- correct answer 
+ // When i am writing just data= "6a7882324ffebc26d96f8f72" then :- correct answer 
+
+ // Does automaticlly models are converting the data into type objectId , because in database _id's type is objectId .
+
+    const events = await eventmodel.find({createdby:data});
+
+     if((events.length)>0)
+     {
+      res.json({Message:events});
+     }
+     else{
+  throw new Error("Having no events ");
+
+     }
+   
+  }catch(error){
 
     next(error);
-   }
 
-
+  }
 });
 
 
@@ -300,3 +343,4 @@ module.exports={
 
     adminRouter:adminRouter
 }
+
