@@ -40,8 +40,8 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |19| Backend of course selling app | some `features` to add  |  🔄    | 
 |20|  Feature added     |   admin route updated       |    ✅    |  
 |21| New project started | till now | 🔄 | 
-|22| Working on previous project | `.regex()` & previous topics | 🔄 |
-|23|- | - |-|
+|22| College Event Portal backend  | `.regex()`, `.equals` & previous topics were used  | ✅ |
+|23| Multer for real data | - |-|
 
 
 
