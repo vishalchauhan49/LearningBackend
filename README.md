@@ -41,7 +41,8 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |20|  Feature added     |   admin route updated       |    ✅    |  
 |21| New project started | till now | 🔄 | 
 |22| College Event Portal backend  | `.regex()`, `.equals` & previous topics were used  | ✅ |
-|23| Multer for real data | - |-|
+|23| Multer for real data | Started  | 🔄  | 
+|24| -| - |-|
 
 
 
@@ -55,7 +56,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 
 
 ## Today's Goal  
-**Day 23:** To be started 
+**Day 24:**  Multer continued 
 
 - 
 
@@ -135,7 +136,11 @@ Always set `expiresIn` or the token never expires.
 - In Admin router , one functionality added :- Admin can see his courses as well as all the courses irrespective who created it . Before admin was only able to access his courses .  
 
 **Day 21,22**   
-- Working on a project `College Event Manager ` 
+- Working on a project `College Event Manager `  
+
+**Day 23***    
+- Started working on `Multer`
+
 
 
 
@@ -147,6 +152,7 @@ Always set `expiresIn` or the token never expires.
 - Error handling  ✅.  
 - EJS templating concepts.✅
 - MongoDb to be deep dived 
+- Multer
 
 
 
