@@ -15,7 +15,8 @@
 -
 
 ## Problems came:  
-- Unable to send data from FRONTEND to BACKEND ( fixing needed)
+- Unable to send data from FRONTEND to BACKEND ( fixing needed);
+- While  fixing the prblem :- New problem came i.e Files are uploading but the thng is that , correct format of file is not storing . Its storing in a binary format not in png or jpeg .So in further i will be correcting it .
 
 
 

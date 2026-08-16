@@ -42,7 +42,7 @@ Note: Full content is coded by me so , it can have grammer mistakes .As told ear
 |21| New project started | till now | 🔄 | 
 |22| College Event Portal backend  | `.regex()`, `.equals` & previous topics were used  | ✅ |
 |23| Multer for real data | Started  | 🔄  | 
-|24| -| - |-|
+|24| Multer | Some problem solving in file  | 🔄 |
 
 
 

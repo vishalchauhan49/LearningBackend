@@ -10,6 +10,7 @@ const path=require("path");
 const fs=require("fs").promises;
 
 app.use("uploads",express.static("uploads"));
+
 app.get("/main",async(req,res)=>{
 
 const finalpath=path.join(__dirname,"index.html");
@@ -17,7 +18,7 @@ const data=await fs.readFile(finalpath,'utf-8');
 res.send(data);
 
 })
-app.post("/profile",upload.single('example'),(req,res)=>{
+app.post("/profile",upload.single('photo'),(req,res)=>{
 
    
 console.log(req.file);
